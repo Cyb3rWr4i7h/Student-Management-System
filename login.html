@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="styles_login.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <script>
+        function updateLoginFields() {
+            const studentRadio = document.getElementById('student');
+            const usernameLabel = document.getElementById('username-label');
+            const usernameInput = document.getElementById('username');
+            const signupText = document.getElementById('signup-text');
+
+            if (studentRadio.checked) {
+                usernameLabel.textContent = 'Student ID';
+                usernameInput.value;
+                signupText.innerHTML = "Don't have an account? <a href='signup_student.html'>Sign up as Student</a>";
+            } else {
+                usernameLabel.textContent = 'Professor ID';
+                usernameInput.value;
+                signupText.innerHTML = "Don't have an account? <a href='signup_professor.html'>Sign up as Professor</a>";
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Login</h1>
+        <form action="" method="POST" class="login-form">
+            <div class="form-group">
+                <label for="role">Login as:</label>
+                <div class="role-options">
+                    <label>
+                        <input type="radio" id="student" name="role" value="student" checked onclick="updateLoginFields()"> Student
+                    </label>
+                    <label>
+                        <input type="radio" id="professor" name="role" value="professor" onclick="updateLoginFields()"> Professor
+                    </label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label id="username-label" for="username">Student ID</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+
+            <div class="form-group">
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit" class="btn-primary">Login</button>
+
+            <p id="signup-text" class="signup-text">Don't have an account? <a href="signup_student.html">Sign up as Student</a></p>
+        </form>
+    </div>
+</body>
+</html>
