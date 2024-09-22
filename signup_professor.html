@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up as Professor</title>
+    <link rel="stylesheet" href="styles_prof.css"> <!-- Link to your CSS file -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">Sign Up as Professor</h1>
+        <form action="" method="POST" class="signup-form">
+            <div class="form-group">
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="department">Department</label>
+                <select id="department" name="department" required>
+                    <option value="">Select Department</option>
+                    <option value="CSE">Computer Science Engineering</option>
+                    <option value="EEE">Electrical Engineering</option>
+                    <option value="ECE">Electronics Engineering</option>
+                    <option value="MNC">Mathematics and Computing</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="course">Course Code</label>
+                <input type="text" id="course" name="course" required>
+            </div>
+
+            <div class="form-group">
+                <label for="joining_date">Joining Date</label>
+                <input type="date" id="joining_date" name="joining_date" required>
+            </div>
+
+            <button type="submit" class="btn-primary">Sign Up</button>
+
+            <p class="login-text">Already have an account? <a href="login.html">Login here</a></p>
+        </form>
+    </div>
+</body>
+</html>
