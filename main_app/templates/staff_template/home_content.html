@@ -1,0 +1,76 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+{% block content %}
+<section>
+    <div style="padding: 10px;">
+        <div class="row" style="display: flex; flex-wrap: wrap; margin-left: -5px;">
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ total_students }}</h3>
+                    <p>Total Students</p>
+                </div>
+            </div>
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ total_attendance }}</h3>
+                    <p>Total Attendance Taken</p>
+                </div>
+            </div>
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ total_leave }}</h3>
+                    <p>Total Leave Applied</p>
+                </div>
+            </div>
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ total_subject }}</h3>
+                    <p>Total Subjects</p>
+                </div>
+            </div>
+        </div>
+        <!-- Adding a chart section here -->
+        <!-- <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc; margin-top: 20px;">
+            <h3>Attendance Trend</h3>
+            <div style="position: relative; height: 300px; width: 100%;">
+                <canvas id="attendanceTrendChart"></canvas>
+            </div>
+        </div> -->
+    </div>
+</section>
+{% endblock content %}
+
+{% block custom_js %}
+<script>
+    $(document).ready(function(){
+        // Sample data for attendance trend (replace with actual data)
+        var attendanceData = {
+            labels: ['Week 1', 'Week 2', 'Week 3', 'Week 4'],
+            datasets: [{
+                label: 'Attendance',
+                backgroundColor: 'rgba(60,141,188,0.6)',
+                borderColor: 'rgba(60,141,188,1)',
+                data: [{{ attendance_week_1 }}, {{ attendance_week_2 }}, {{ attendance_week_3 }}, {{ attendance_week_4 }}] // Replace with your data
+            }]
+        };
+        
+        var ctx = $('#attendanceTrendChart').get(0).getContext('2d');
+        var attendanceTrendChart = new Chart(ctx, {
+            type: 'line',
+            data: attendanceData,
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true
+                        }
+                    }]
+                }
+            }
+        });
+    });
+</script>
+{% endblock custom_js %}

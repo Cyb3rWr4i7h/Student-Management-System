@@ -1,0 +1,39 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+{% block content %}
+<section>
+    <div style="padding: 10px;">
+        <div class="row" style="display: flex; flex-wrap: wrap; margin-left: -5px;">
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ total_attendance }}</h3>
+                    <p>Total Attendance</p>
+                </div>
+            </div>
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ percent_present }}<sup style="font-size: 20px">%</sup></h3>
+                    <p>Percentage Present</p>
+                </div>
+            </div>
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ percent_absent }}<sup style="font-size: 20px">%</sup></h3>
+                    <p>Percentage Absent</p>
+                </div>
+            </div>
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ total_subject }}</h3>
+                    <p>Total Subjects</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{% block custom_js %}
+<!-- No charts or custom JavaScript here -->
+{% endblock custom_js %}

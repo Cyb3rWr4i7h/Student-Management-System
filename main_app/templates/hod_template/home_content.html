@@ -1,0 +1,43 @@
+{% extends 'main_app/base.html' %}
+{% load static %}
+{% block page_title %}{{ page_title }}{% endblock page_title %}
+{% block content %}
+<section>
+    <div style="padding: 10px;">
+        <div class="row" style="display: flex; flex-wrap: wrap; margin-left: -5px;">
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ total_students }}</h3>
+                    <p>Total Students</p>
+                    <a href="{% url 'manage_student' %}" style="color: #ffffff;">More info</a>
+                </div>
+            </div>
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ total_staff }}</h3>
+                    <p>Total Staff</p>
+                    <a href="{% url 'manage_staff' %}" style="color: #ffffff;">More info</a>
+                </div>
+            </div>
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ total_course }}</h3>
+                    <p>Total Courses</p>
+                    <a href="{% url 'manage_course' %}" style="color: #ffffff;">More info</a>
+                </div>
+            </div>
+            <div style="width: 50%; padding: 5px;">
+                <div style="padding: 20px; background-color: #2d2f48; color: white; border: 1px solid #cccccc;">
+                    <h3>{{ total_subject }}</h3>
+                    <p>Total Subjects</p>
+                    <a href="{% url 'manage_subject' %}" style="color: #ffffff;">More info</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock content %}
+
+{% block custom_js %}
+<!-- No charts or custom JavaScript here -->
+{% endblock custom_js %}
